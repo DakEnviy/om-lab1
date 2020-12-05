@@ -21,4 +21,4 @@ def find_min_parabola(func, left, right, epsilon=0.0005):
             else:
                 x3, f3 = u, fu
 
-    return (x1 + x2) / 2
+    return (x1 + x3) / 2
