@@ -16,13 +16,13 @@ def find_min_golden_ratio(a, b, func, epsilon):
             val1 = func(x1)
             val2 = func(x2)
 
-        if val1 < val2:
+        if val2 < val1:
             a = x1
             x1 = x2
             x2 = b - ((3 - sqrt(5)) / 2) * (b - a)
             val1 = val2
             val2 = func(x2)
-        if val2 < val1:
+        if val1 < val2:
             b = x2
             x2 = x1
             x1 = a + ((3 - sqrt(5)) / 2) * (b - a)

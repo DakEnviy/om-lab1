@@ -6,7 +6,8 @@ from algo.find_min_parabola import find_min_parabola
 class TestFindMinParabola(unittest.TestCase):
     def test_func1(self):
         func, a, b, result = test_functions[0]
-        self.assertAlmostEqual(find_min_parabola(func, a, b, epsilon=epsilon), result, places=places)
+        for _ in range(10000):
+            self.assertAlmostEqual(find_min_parabola(func, a, b, epsilon=epsilon), result, places=places)
 
     def test_func2(self):
         func, a, b, result = test_functions[1]
