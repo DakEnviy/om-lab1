@@ -13,15 +13,15 @@ def fib(n):
     return v
 
 
-def find_min_fibonacci(a, b, func, epsilon):
-    fn = (b - a) / epsilon
+def find_min_fibonacci(func, left, right, epsilon):
+    fn = (right - left) / epsilon
 
     n = 2
     while fib(n) < fn:
         n += 1
 
-    x1 = a + fib(n - 2) / fib(n) * (b - a)
-    x2 = a + fib(n - 1) / fib(n) * (b - a)
+    x1 = left + fib(n - 2) / fib(n) * (right - left)
+    x2 = left + fib(n - 1) / fib(n) * (right - left)
     val1 = func(x1)
     val2 = func(x2)
 
@@ -29,20 +29,20 @@ def find_min_fibonacci(a, b, func, epsilon):
         n -= 1
 
         if val1 > val2:
-            a = x1
+            left = x1
 
             x1 = x2
-            x2 = a + fib(n - 1) / fib(n) * (b - a)
+            x2 = left + fib(n - 1) / fib(n) * (right - left)
 
             val1 = val2
             val2 = func(x2)
         else:
-            b = x2
+            right = x2
 
             x2 = x1
-            x1 = a + fib(n - 2) / fib(n) * (b - a)
+            x1 = left + fib(n - 2) / fib(n) * (right - left)
 
             val2 = val1
             val1 = func(x1)
 
-    return (a + b) / 2
+    return (left + right) / 2
