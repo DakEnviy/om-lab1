@@ -1,6 +1,6 @@
 
-def find_min_parabola(func, a, b, epsilon=0.0005):
-    x1, x2, x3 = a, (a + b) / 2, b
+def find_min_parabola(func, left, right, epsilon=0.0005):
+    x1, x2, x3 = left, (left + right) / 2, right
     f1, f2, f3 = func(x1), func(x2), func(x3)
 
     while abs(x3 - x1) >= epsilon:
