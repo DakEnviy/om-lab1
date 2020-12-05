@@ -31,3 +31,7 @@ test_functions = [
     (func4, 0, 1, 0.2408),
     (func5, 0.5, 2.5, 2.2219)
 ]
+
+test_functions_multi = [
+    (func3, -15, 0, -0.00009)  # actual minimum is -31.667
+]
